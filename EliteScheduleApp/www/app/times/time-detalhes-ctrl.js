@@ -5,6 +5,8 @@
 
 	function timeDetalhesCtrl($stateParams){
 		var vm = this;
+
+		console.log("$stateParams", $stateParams);
 	};
 
 
