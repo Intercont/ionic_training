@@ -1,6 +1,14 @@
-<ion-view>
+<ion-view title="Times" ng-controller="TimesCtrl as vm">
 	<ion-content class="has-header">
-		<h1>Times</h1>
-		<a href="#/app/times/21" class="button button-positive">Ir para o Time</a>
+		<div class="list">
+			<div ng-repeat="divisao in vm.times">
+				<div class="item item-divider item-energized">{{divisao.divisionName}}</div>
+				<a class="item item-icon-right" ng-repeat="time in divisao.divisionTeams" href="#/app/times/{{time.id}}">
+					{{time.name}}
+					<i class="icon ion-chevron-right icon-accessory"></i>
+				</a>
+			</div>
+
+		</div>
 	</ion-content>
 </ion-view>

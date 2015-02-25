@@ -1,5 +1,14 @@
-<ion-view>
+<ion-view title="Classificação" ng-controller="ClassificacaoCtrl as vm">
 	<ion-content class="has-header">
-		<h1>Classificação</h1>
+		<div class="list">
+			<div ng-repeat="divisao in vm.classificacao">
+				<div class="item item-divider item-energized">{{divisao.divisionName}}</div>
+				<a class="item item-icon-right" ng-repeat="time in divisao.divisionStandings" href="#/app/times/{{time.id}}">
+					{{time.teamName}} ({{time.wins}} - {{time.losses}})
+					<i class="icon ion-chevron-right icon-accessory"></i>
+				</a>
+			</div>
+
+		</div>
 	</ion-content>
 </ion-view>
